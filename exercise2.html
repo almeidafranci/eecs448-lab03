@@ -43,7 +43,7 @@
       </div>
       <div class="row">
 	<div class="col-lg-12">
-		<img id="slideImage" width=400 height=280 src="img/slide1.jpg">
+		<img id="slideImage" width=400 height=280 alt="Image 1" src="img/slide1.jpg">
 	</div>
 	<div class="col-lg-12">
 		<button type="button" class="btn btn-default" onclick="previous()">Previous</button>
@@ -58,52 +58,66 @@
 	{
 	   var image = document.getElementById("slideImage");
 	   var newSrc = "";
+	   var newAlt = "";
 
-	   switch(image.src){
-	   	case "img/slide1.jpg":
+	   switch(image.alt){
+	   	case "Image 1":
 			newSrc = "img/slide5.jpg";
+			newAlt = "Image 5";
 			break;
-	   	case "img/slide2.jpg":
+	   	case "Image 2":
 			newSrc = "img/slide1.jpg";
+			newAlt = "Image 1";
 			break;
-	   	case "img/slide3.jpg":
+	   	case "Image 3":
 			newSrc = "img/slide2.jpg";
+			newAlt = "Image 2";
 			break;
-	   	case "img/slide4.jpg":
+	   	case "Image 4":
 			newSrc = "img/slide3.jpg";
+			newAlt = "Image 3";
 			break;
-	   	case "img/slide5.jpg":
+	   	case "Image 5":
 			newSrc = "img/slide4.jpg";
+			newAlt = "Image 4";
 			break;
 	   }
 
 	   image.src = newSrc;
+	   image.alt = newAlt;
 	}
 
 	function next()
 	{
 	   var image = document.getElementById("slideImage");
 	   var newSrc = "";
+	   var newAlt = "";
 
-	   switch(image.src){
-	   	case "img/slide1.jpg":
+	   switch(image.alt){
+	   	case "Image 1":
 			newSrc = "img/slide2.jpg";
+			newAlt = "Image 2";
 			break;
-	   	case "img/slide2.jpg":
+	   	case "Image 2":
 			newSrc = "img/slide3.jpg";
+			newAlt = "Image 3";
 			break;
-	   	case "img/slide3.jpg":
+	   	case "Image 3":
 			newSrc = "img/slide4.jpg";
+			newAlt = "Image 4";
 			break;
-	   	case "img/slide4.jpg":
+	   	case "Image 4":
 			newSrc = "img/slide5.jpg";
+			newAlt = "Image 5";
 			break;
-	   	case "img/slide5.jpg":
+	   	case "Image 5":
 			newSrc = "img/slide1.jpg";
+			newAlt = "Image 1";
 			break;
 	   }
 
 	   image.src = newSrc;
+	   image.alt = newAlt;
 	}
 	</script>
   </body>
