@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="EECS 448 - Spring 2016">
+    <meta name="author" content="Francinaldo Almeida">
+
+    <title>Francinaldo Almeida - EECS 448 Lab 03 Website</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">EECS 448 - Lab 03</a>
+        </div>
+        <div id="navbar">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Home</a></li>
+	    <li><a href="exercise1.html">Exercise 1</a></li>
+	    <li class="active"><a href="exercise2.html">Exercise 2</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="row">
+	<div class="col-lg-12">
+        	<h1>Slide show</h1>
+	</div>
+      </div>
+      <div class="row">
+	<div class="col-lg-12">
+		<img id="slideImage" width=400 height=280 src="img/slide1.jpg">
+	</div>
+	<div class="col-lg-12">
+		<button type="button" class="btn btn-default" onclick="previous()">Previous</button>
+		<button type="button" class="btn btn-default" onclick="next()">Next</button>
+	</div>
+      </div>
+
+    </div>
+
+	<script>
+	function previous()
+	{
+	   var image = document.getElementById("slideImage");
+	   var newSrc = "";
+
+	   switch(image.src){
+	   	case "img/slide1.jpg":
+			newSrc = "img/slide5.jpg";
+			break;
+	   	case "img/slide2.jpg":
+			newSrc = "img/slide1.jpg";
+			break;
+	   	case "img/slide3.jpg":
+			newSrc = "img/slide2.jpg";
+			break;
+	   	case "img/slide4.jpg":
+			newSrc = "img/slide3.jpg";
+			break;
+	   	case "img/slide5.jpg":
+			newSrc = "img/slide4.jpg";
+			break;
+	   }
+
+	   image.src = newSrc;
+	}
+
+	function next()
+	{
+	   var image = document.getElementById("slideImage");
+	   var newSrc = "";
+
+	   switch(image.src){
+	   	case "img/slide1.jpg":
+			newSrc = "img/slide2.jpg";
+			break;
+	   	case "img/slide2.jpg":
+			newSrc = "img/slide3.jpg";
+			break;
+	   	case "img/slide3.jpg":
+			newSrc = "img/slide4.jpg";
+			break;
+	   	case "img/slide4.jpg":
+			newSrc = "img/slide5.jpg";
+			break;
+	   	case "img/slide5.jpg":
+			newSrc = "img/slide1.jpg";
+			break;
+	   }
+
+	   image.src = newSrc;
+	}
+	</script>
+  </body>
+</html>
+
