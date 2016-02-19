@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="EECS 448 - Spring 2016">
+    <meta name="author" content="Francinaldo Almeida">
+
+    <title>Francinaldo Almeida - EECS 448 Lab 03 Website</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">EECS 448 - Lab 03</a>
+        </div>
+        <div id="navbar">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Home</a></li>
+	    <li class="active"><a href="exercise1.html">Exercise 1</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="row">
+	<div class="col-lg-12">
+        	<h1>Password validator</h1>
+	</div>
+      </div>
+      <div class="row">
+	<div class="col-lg-12">
+		<form>
+		  <div id="info"></div>
+		  <div class="form-group">
+		    <label for="password">Password</label>
+		    <input type="password" class="form-control" id="password" placeholder="Password">
+		  </div>
+		  <div class="form-group">
+		    <label for="confirmation">Confirmation</label>
+		    <input type="password" class="form-control" id="confirmation" placeholder="Confirmation">
+		  </div>
+		  <button type="button" class="btn btn-default" onclick="validate()">Validate</button>
+		</form>
+	</div>
+      </div>
+
+    </div>
+
+	<script>
+	function validate()
+	{
+	   document.getElementById("info").innerHTML = "";
+
+	   var password = document.getElementById("password");
+	   var confirmation = document.getElementById("confirmation");
+
+	   if(password.value.length < 8){
+		alert("The passwords must be at least 8 characters long.");
+	   }else if(password.value != confirmation.value){
+		alert("The passwords entered don't match.");
+	   }else{
+		document.getElementById("info").innerHTML = '<div class="alert alert-success">Passwords match. You\'re good!</div>';
+	   }
+	}
+	</script>
+  </body>
+</html>
+
