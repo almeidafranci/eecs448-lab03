@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="EECS 448 - Spring 2016">
+    <meta name="author" content="Francinaldo Almeida">
+
+    <title>Francinaldo Almeida - EECS 448 Lab 03 Website</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+
+    <style>
+    #dummy {
+	border-style: solid;
+    }
+    </style>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">EECS 448 - Lab 03</a>
+        </div>
+        <div id="navbar">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Home</a></li>
+	    <li><a href="exercise1.html">Exercise 1</a></li>
+	    <li><a href="exercise2.html">Exercise 2</a></li>
+	    <li><a href="exercise3.html">Exercise 3</a></li>
+	    <li class="active"><a href="exercise4.html">Exercise 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="row">
+	<div class="col-lg-12">
+        	<h1>CSS manipulation</h1>
+	</div>
+      </div>
+      <div class="row">
+	<div id="dummy" class="col-lg-8">
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor enim sed nisi rhoncus, id pulvinar lacus hendrerit. Vivamus elementum mi egestas neque placerat, non pretium lectus feugiat. In id mauris at purus tempus accumsan sit amet sit amet eros. Pellentesque sollicitudin urna sit amet arcu volutpat tempor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean id imperdiet lorem. Vivamus commodo tellus et diam faucibus aliquam. Mauris non ligula neque. Fusce vulputate nisl in odio vestibulum scelerisque. Sed sodales erat quis laoreet semper. Nunc viverra leo convallis tortor ornare cursus. Nunc sagittis augue a neque ullamcorper tristique. Vivamus eleifend volutpat justo, in porttitor augue accumsan vel. Mauris vel tincidunt orci. Ut accumsan risus at massa finibus, a egestas erat facilisis. Pellentesque tempor turpis eu dapibus mattis.</p>
+	</div>
+	<div class="col-lg-4">
+		<form class="form-horizontal">
+		  <h4>Border</h4>
+		  <div class="form-group">
+		    <label for="borderRed" class="col-sm-4 control-label">Red</label>
+		    <div class="col-sm-8">
+      			<input type="number" min=0 max=255 class="form-control" id="borderRed" placeholder="0-255">
+    		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="borderGreen" class="col-sm-4 control-label">Green</label>
+		    <div class="col-sm-8">
+      			<input type="number" min=0 max=255 class="form-control" id="borderGreen" placeholder="0-255">
+    		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="borderBlue" class="col-sm-4 control-label">Blue</label>
+		    <div class="col-sm-8">
+      			<input type="number" min=0 max=255 class="form-control" id="borderBlue" placeholder="0-255">
+    		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="borderWidth" class="col-sm-4 control-label">Width</label>
+		    <div class="col-sm-8">
+      			<input type="number" min=0 class="form-control" id="borderWidth" placeholder="">
+    		    </div>
+		  </div>
+		  <h4>Background color</h4>
+		  <div class="form-group">
+		    <label for="backgroundRed" class="col-sm-4 control-label">Red</label>
+		    <div class="col-sm-8">
+      			<input type="number" min=0 max=255 class="form-control" id="backgroundRed" placeholder="0-255">
+    		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="backgroundGreen" class="col-sm-4 control-label">Green</label>
+		    <div class="col-sm-8">
+      			<input type="number" min=0 max=255 class="form-control" id="backgroundGreen" placeholder="0-255">
+    		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="backgroundBlue" class="col-sm-4 control-label">Blue</label>
+		    <div class="col-sm-8">
+      			<input type="number" min=0 max=255 class="form-control" id="backgroundBlue" placeholder="0-255">
+    		    </div>
+		  </div>
+		  <div class="form-group">
+		    <div class="col-sm-offset-4 col-sm-8">
+		      <button type="button" class="btn btn-default" onclick="changeStyle()">Apply</button>
+		    </div>
+		  </div>
+		</form>
+	</div>
+      </div>
+
+    </div>
+
+	<script>
+	function changeStyle()
+	{
+	   var paragraph = document.getElementById("dummy");
+
+	   var borderRed = document.getElementById("borderRed").value;
+	   var borderGreen = document.getElementById("borderGreen").value;
+	   var borderBlue = document.getElementById("borderBlue").value;
+	   var borderWidth = document.getElementById("borderWidth").value;
+
+	   var backgroundRed = document.getElementById("backgroundRed").value;
+	   var backgroundGreen = document.getElementById("backgroundGreen").value;
+	   var backgroundBlue = document.getElementById("backgroundBlue").value;
+
+	   paragraph.style.borderWidth = borderWidth+"px";
+	   paragraph.style.borderColor = "rgb("+borderRed+","+borderGreen+","+borderBlue+")";
+
+	   paragraph.style.backgroundColor = "rgb("+backgroundRed+","+backgroundGreen+","+backgroundBlue+")";
+	}
+	</script>
+  </body>
+</html>
+
